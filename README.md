@@ -27,3 +27,14 @@
     -Créer une route "/register"
     -Créer une route "/login"
         
+##Création des formulaires register/login
+    -le formulaire d'inscription contient 
+        -Email
+        -pseudo
+        -password(*2)
+        -CGU(condition générale d'utilisation)
+        
+    -le formulaire de connexion contient :
+        -Email
+        -password
+Mise en forme CSS (exemple Milligram)

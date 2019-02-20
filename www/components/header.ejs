@@ -4,19 +4,25 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Roboto:300,300italic,700,700italic">
+        <link rel="stylesheet" href="//cdn.rawgit.com/necolas/normalize.css/master/normalize.css">
+        <link rel="stylesheet" href="//cdn.rawgit.com/milligram/milligram/master/dist/milligram.min.css">
         <title>HETIC DAMN</title>
 </head>
     <body>
         <header>
             <h1>Hetic damn </h1>
             <nav>
-                <ul>
-                    <li>
-                        <a href="/"></a>
-                        <a href="/www/login.ejs"></a>
-                        <a href="/www/login.ejs"></a>
-                        <a href="/www/chat.ejs"></a>
-                    </li>
+            <ul>
+                <li><a href="/">Accueil</a></li>
+                    <% if( connected === false ){ %>
+                        <li><a href="/www/register.ejs">Inscription</a></li>
+                        <li><a href="/www/login.ejs">Connexion</a></li>
+                    <% } %>
+
+                    <% if( connected ) { %>
+                        <li><a href="/www/chat.ejs">Chat</a></li>
+                    <% } %>
                 </ul>
             </nav>
         </header>

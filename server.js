@@ -9,6 +9,7 @@ const dotenv = require('dotenv')
 
 //Routes
 const frontRoute = require('./route/frontRoute')
+const ApiRoute = require('./route/APIRoute')
 
 /*Configuration*/
 
@@ -21,9 +22,9 @@ class serverClass{
     init(){
 
         //Config route
+        server.use('/api',ApiRoute)
         server.use('/',frontRoute)
-
-
+        
         //Config du dossier client
         server.set('views',__dirname + '/www')
         server.use(express.static(path.join(__dirname,'www')))

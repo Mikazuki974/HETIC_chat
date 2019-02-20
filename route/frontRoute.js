@@ -8,25 +8,23 @@
 /* Configuration*/
     
     Router.get('/', ( req, res ) => {
-        res.render('index')
+        res.render('index',{connected:false})
     })
 
     Router.get('/register', ( req, res ) => {
-        res.render('register')
+        res.render('register',{connected:false})
     })
 
     Router.get('/home', ( req, res ) => {
-        res.render('home')
+        res.render('home',{connected:false})
     })
 
     Router.get('/login', ( req, res ) => {
-        res.render('login')
+        res.render('login',{connected:false})
     })
 
     Router.get('/chat', ( req, res ) => {
-        res.render('chat')
+        res.render('chat',{connected:false})
     })
-
-    
 
     module.exports = Router

@@ -1,0 +1,64 @@
+<!-- 
+    Faire un formulaire d'inscription
+    - email
+    - pseudo
+    - pass x 2
+    - cgu
+-->
+<form action="#">
+        <label for="email">Email</label>
+        <input type="email" name="email" id="email" required minlength="5">
+    
+        <label for="pseudo">Pseudo</label>
+        <input type="text" name="pseudo" id="pseudo" required minlength="2">
+    
+        <label for="password">Mot de passe</label>
+        <input type="password" name="password" id="password" required minlength="5">
+    
+        <label for="password-secure">Répéter le mot de passe</label>
+        <input type="password" name="password-secure" id="password-secure" required minlength="5">
+    
+        <label for="conditions">Accepter les <a href="#">CGU</a></label>
+        <input type="checkbox" name="conditions" id="conditions" required>
+    
+        <button type="submit">Inscription</button>
+    </form>
+    
+    <script>
+    
+        document.addEventListener('DOMContentLoaded', () => {
+            // Capter la soumissionn du formulaire
+            document.querySelector('form').addEventListener('submit', (event) => {
+                // Bloquer le comportement naturel du formulaire
+                event.preventDefault();
+    
+                console.log('submit');
+
+                //Vérifier les champs du formulaire
+
+                //Variable
+                var formErro = 0
+                
+                //Déclarer les variables
+                const email = document.querySelector('#email')
+                const pseudo = document.querySelector('#pseudo')
+                const password = document.querySelector('#password')
+                const password_secure = document.querySelector('#password-secure')
+                const conditions = document.querySelector('#conditions')
+
+                
+
+                //Vérifier les champs du formulaire
+                if(email.value.length <=4) formErro++
+                if(pseudo.value.length <=1) formErro++
+                if(password.value.length <=5) formErro++
+                if(password_secure.value != password_secure.value) formErro++
+                if(!conditions)formErro++
+
+                //Validation finale 
+                if(formErro === 0 ){
+                    console.log('Well done')
+                }
+            })
+        });
+    </script>
