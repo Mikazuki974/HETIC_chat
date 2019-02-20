@@ -21,9 +21,7 @@ class serverClass{
 
     init(){
 
-        //Config route
-        server.use('/api',ApiRoute)
-        server.use('/',frontRoute)
+        
         
         //Config du dossier client
         server.set('views',__dirname + '/www')
@@ -31,6 +29,15 @@ class serverClass{
 
         //Config du moteur de rendu
         server.set('view engine','ejs')
+        
+
+        // Body-Parser
+        server.use(BodyParser.urlencoded({ extended: false }))
+
+        //Config route
+        server.use('/api',ApiRoute)
+        server.use('/',frontRoute)
+
 
         this.launch()
     }
