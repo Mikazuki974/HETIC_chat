@@ -1,7 +1,7 @@
 <!-- 
     Faire un formulaire de connexion
     - email
-    - pass
+    - password
 -->
 <form action="#">
 
@@ -11,5 +11,34 @@
     <label for="password">Password</label>
     <input type="password" name="password" id="password">
 
-    <button type="submit">Inscription</button>
+    <button type="submit">Connexion</button>
 </form>
+
+<script>
+        document.addEventListener('DOMContentLoaded', () => {
+
+            //Déclarer les variables
+            const email = document.querySelector('#email')
+            const password = document.querySelector('#password')
+
+            // Capter la soumissionn du formulaire
+            document.querySelector('form').addEventListener('submit', (event) => {
+                // Bloquer le comportement naturel du formulaire
+                event.preventDefault();
+
+                //Vérifier les champs du formulaire avec la varaible formError
+             
+                var formErro = 0
+                
+                //Vérifier les champs du formulaire
+                if(email.value.length <=4) formErro++
+                if(password.value.length <=4) formErro++
+
+
+                //Validation finale 
+                if(formErro === 0 ){
+                    console.log('Well done bro');
+                }
+            })
+        })
+    </script>
